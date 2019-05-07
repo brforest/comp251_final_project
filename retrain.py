@@ -917,7 +917,7 @@ def logging_level_verbosity(logging_verbosity):
                            (str(e), list(name_to_level)))
 
 
-def main():
+def main(_):
     # Needed to make sure the logging output is visible.
     # See https://github.com/tensorflow/tensorflow/issues/3047
     logging_verbosity = logging_level_verbosity(LOGGING_VERBOSITY)
@@ -1095,7 +1095,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     # Redefined Arguments as Constants
     # Path to folders of labeled images.
-    IMAGE_DIR = ''
+    IMAGE_DIR = 'images'
     # Where to save the trained graph.
     OUTPUT_GRAPH = '/tmp/output_graph.pb'
     # Where to save the intermediate graphs.
@@ -1147,7 +1147,7 @@ if __name__ == '__main__':
     # Which TensorFlow Hub module to use. For more options, search https://tfhub.dev for image feature vector modules.
     TFHUB_MODULE = 'https://tfhub.dev/google/imagenet/inception_v3/feature_vector/1'
     # Where to save the exported graph
-    SAVED_MODEL_DIR = ''
+    SAVED_MODEL_DIR = 'model'
     # How much logging output should be produced.
     # choices=['DEBUG', 'INFO', 'WARN', 'ERROR', 'FATAL']
     LOGGING_VERBOSITY = 'INFO'

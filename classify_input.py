@@ -16,6 +16,9 @@ with open(labels_dir, 'r') as csvfile:
 src_img_dir = "all_images/images/images/"
 dst_img_dir = "images/"
 num_missing_files = 0
+num_added_files = 0
+num_existing_files = 0
+num_emotions_added = 0
 for entry in legend:
     filename = entry[0]
     emotion = entry[1].lower()
@@ -25,7 +28,12 @@ for entry in legend:
         new_dir = dst_img_dir + emotion
         if not os.path.exists(new_dir):
             os.makedirs(new_dir)
-        os.rename(src_img_dir + filename, dst_img_dir + emotion + "/" + filename)
+            num_emotions_added += 1
+        if not os.path.isfile(dst_img_dir + emotion + "/" + filename):
+            os.rename(src_img_dir + filename, dst_img_dir + emotion + "/" + filename)
+            num_added_files += 1
+        else:
+            num_existing_files += 1
     else:
         # Not all entries in legend.csv exist as files
         num_missing_files += 1

@@ -7,8 +7,8 @@ import numpy as np
 import cv2
 
 # module-level variables ##############################################################################################
-RETRAINED_LABELS_TXT_FILE_LOC = "retrained_labels.txt"
-RETRAINED_GRAPH_PB_FILE_LOC = "retrained_graph.pb"
+RETRAINED_LABELS_TXT_FILE_LOC = "tmp/retrained_labels.txt"
+RETRAINED_GRAPH_PB_FILE_LOC = "tmp/retrained_graph.pb"
 
 TEST_IMAGES_DIR = "images/test"
 

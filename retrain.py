@@ -111,7 +111,7 @@ import tensorflow_hub as hub
 MAX_NUM_IMAGES_PER_CLASS = 2 ** 27 - 1  # ~134M
 
 # The location where variable checkpoints will be stored.
-CHECKPOINT_NAME = '/tmp/_retrain_checkpoint'
+CHECKPOINT_NAME = 'tmp/_retrain_checkpoint'
 
 # A module is understood as instrumented for quantization with TF-Lite
 # if it contains any of these ops.
@@ -1095,17 +1095,17 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     # Redefined Arguments as Constants
     # Path to folders of labeled images.
-    IMAGE_DIR = 'images'
+    IMAGE_DIR = 'images/train'
     # Where to save the trained graph.
-    OUTPUT_GRAPH = '/tmp/output_graph.pb'
+    OUTPUT_GRAPH = 'tmp/output_graph.pb'
     # Where to save the intermediate graphs.
-    INTERMEDIATE_OUTPUT_GRAPHS_DIR = '/tmp/intermediate_graph/'
+    INTERMEDIATE_OUTPUT_GRAPHS_DIR = 'tmp/intermediate_graph/'
     # How many steps to store intermediate graph. If "0" then will not store.
     INTERMEDIATE_STORE_FREQUENCY = 0
     # Where to save the trained graph\'s labels.
-    OUTPUT_LABELS = '/tmp/output_labels.txt'
+    OUTPUT_LABELS = 'tmp/output_labels.txt'
     # Where to save summary logs for TensorBoard.
-    SUMMARIES_DIR = '/tmp/retrain_logs'
+    SUMMARIES_DIR = 'tmp/retrain_logs'
     # How many training steps to run before ending.
     HOW_MANY_TRAINING_STEPS = 4000
     # How large a learning rate to use when training.
@@ -1133,7 +1133,7 @@ if __name__ == '__main__':
     # Whether to print out a list of all misclassified test images.
     PRINT_MISCLASSIFIED_TEST_IMAGES = False
     # Path to cache bottleneck layer values as files.
-    BOTTLENECK_DIR = '/tmp/bottleneck'
+    BOTTLENECK_DIR = 'tmp/bottleneck'
     # The name of the output classification layer in the retrained graph.
     FINAL_TENSOR_NAME = 'final_result'
     # Whether to randomly flip half of the training images horizontally.
